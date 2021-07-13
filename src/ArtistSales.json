@@ -2,81 +2,16 @@
   {
     "Artist": "EMINEM",
     "recordSales": 227,
-    "Top_1": {"The Marshall Mathers LP (2000):": 23340000}, 
-    "Top_2": "{The Eminem Show (2002): 23020000}",
-    "Top_3": "{Encore (2004): 11030000}",
-    "Top_4": ""
+    "Top_1": {"title": "The Marshall Mathers LP (2000)", "sales": 23340000}, 
+    "Top_2": {"title": "The Eminem Show (2002)", "sales": 23020000},
+    "Top_3": {"title": "Encore (2004)", "sales": 11030000}
   },
   {
     "Artist": "DRAKE",
     "recordSales": 152,
-    "Top_1": "{Take Care (2011): 3345000}",
-    "Top_2": "{views (2016): 2525000}",
-    "Top_3": "(Nothing Was the Same (2013): 2510000}",
-    "Top_4": ""
-  },
-  {
-    "Artist": "KANYE WEST",
-    "recordSales": 140,
-    "Top_1": "",
-    "Top_2": "",
-    "Top_3": "",
-    "Top_4": ""
-  },
-  {
-    "Artist": "JAY-Z",
-    "recordSales": 125,
-    "Top_1": "",
-    "Top_2": "",
-    "Top_3": "",
-    "Top_4": ""
-  },
-  {
-    "Artist": "LIL WAYNE",
-    "recordSales": 110,
-    "Top_1": "",
-    "Top_2": "",
-    "Top_3": "",
-    "Top_4": ""
-  },
-  {
-    "Artist": "NICKI MINAJ",
-    "recordSales": 106,
-    "Top_1": "",
-    "Top_2": "",
-    "Top_3": "",
-    "Top_4": ""
-  },
-  {
-    "Artist": "FLO RIDA",
-    "recordSales": 102,
-    "Top_1": "",
-    "Top_2": "",
-    "Top_3": "",
-    "Top_4": ""
-  },
-  {
-    "Artist": "TUPAC SHAKUR",
-    "recordSales": 75,
-    "Top_1": "",
-    "Top_2": "",
-    "Top_3": "",
-    "Top_4": ""
-  },
-  {
-    "Artist": "SNOOP DOGG",
-    "recordSales": 40,
-    "Top_1": "",
-    "Top_2": "",
-    "Top_3": "",
-    "Top_4": ""
-  },
-  {
-    "Artist": "DMX",
-    "recordSales": 34,
-    "Top_1": "",
-    "Top_2": "",
-    "Top_3": "",
-    "Top_4": ""
+    "Top_1": {"title": "Take Care (2011)", "sales": 3345000},
+    "Top_2": {"title": "views (2016)", "sales": 2525000},
+    "Top_3": {"title": "Nothing Was the Same (2013)", "sales": 2510000}
   }
+ 
 ]
