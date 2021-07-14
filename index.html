@@ -23,9 +23,10 @@
      
   <header class="header">  
     <nav class="header-nav group">
-      <h1 class="header-nav-logo">Musical Stats</h1>
+      <a class="header-nav-logo" href="https://0skat.github.io/MusicData/"><img src="src/images/logo.png"></a>
       <ul class="header-nav-list">
-         <li><a href="info">About</a> </li>
+         <li><a href="#info">About</a> </li>
+         <li><a href="#graph">Music Comparison Graphs</a> </li>
          <li><a href="https://www.linkedin.com/in/oscar-vazquez-650471165/"><img src="src/images/linkedin.png" class="icon"></a> </li>
          <li><a href="https://github.com/0skat/MusicData"> <img src="src/images/github.png" class="icon"> </a></li>
         </ul>
@@ -33,39 +34,34 @@
     </header>
     
     
-    <m class="playlist">
-        <!-- <iframe src="https://open.spotify.com/embed/playlist/1gd5xHych60DtmaIKSSvuv" width="100%" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
-        <iframe src="https://open.spotify.com/embed/playlist/1gd5xHych60DtmaIKSSvuv" width="80%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-    </li>
-
     
-    <div class="info">
+    
+    <section class="info" id="About">
       <h1>Project info</h1>
       <p> The purpose of this project is to compare accousticness,danceabilty, popularity, energy and tempo of eight songs. 
         The songs chosen, are by some of my currently most listened to artist. 
         This was determined by accesing my own user data through Spotify web services. 
         A third-party dataset was used to compile the data for the selected songs and to create the graphs shown. </p>
-    </div>
+        <div class="playlist">
+            <iframe src="https://open.spotify.com/embed/playlist/1gd5xHych60DtmaIKSSvuv" width="100%" height="300px" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+      </section>
 
 
+    <section class="graph-section"> 
+      <div class="graphs" id="graph" data-flickity='{ "wrapAround": true, "prevNextButtons": false, "percentPosition": false}'> 
+        
+        <p class="chart" id="Accoustic"></p>
 
+        <p class="chart" id="Dance"></p>
 
+        <p class="chart" id="Popular"></p>
 
+        <p class="chart" id="Energy"></p>
 
-
-
-    <div class="graphs"  data-flickity='{ "wrapAround": true, "prevNextButtons": false, "percentPosition": false}'> 
-      
-      <div class="chart" id="Accoustic"></div>
-
-      <div class="chart" id="Dance"></div>
-
-      <div class="chart" id="Popular"></div>
-
-      <div class="chart" id="Energy"></div>
-
-      <div class="chart" id="Tempo"></div>
-    </div>
+        <p class="chart" id="Tempo"></p>
+      </div>
+    </section>
     
   
     

@@ -1,22 +1,28 @@
 body {
   background-color: rgb(117, 20, 20);
+  font-family: sans-serif;
 }
 
 
 
 .playlist{
- float: right;
- width: auto;  
+ margin-left: 1px;
+margin-top: 20px;
 }
 
 /* CSS for coarousel */
 .graphs {
-  height: 100px;
-  padding-bottom: 33.3%;
+  /* padding-bottom: 33.3%; */
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  overflow: auto;
+  width: 500px;
+ 
 }
 
 .chart{
-  display: flex;
+  /* display: inline-block; */
   margin: 50px;
   width: 50%;
   height: 200px;
@@ -30,14 +36,21 @@ body {
   display: inline-block;
   justify-content: left;
   border: solid black 2px;
-  width: 200px;
-  margin-left: 50px;
+  width: 250px;
+  margin-top: 100px;
+  height: 750px;
 }
 
-div > h1{
+section > h1{
   font-size: x-large;
-
+  color: whitesmoke;
   text-align: center;
+}
+section > p{
+  color: white;
+  text-indent: 10px;
+  letter-spacing: 2px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 /* icons/ nav bar */
@@ -54,7 +67,7 @@ div > h1{
 
 .header a {
   display: block;
-  padding: 20px;
+  padding: 10px;
 }
 
 .header a:hover {
@@ -64,24 +77,28 @@ div > h1{
 .header-nav {
   width: 800px;
   margin: auto;
+  display: flex;
+}
+
+.header-nav-logo > img  {
+
+  width: 50px;
+  height: 50px;
+}
+
+.header-nav-list {
+  display: flex;
+}
+
+.header-nav-list > li {
+  /* float: left; */
 }
 
 .header-nav-logo {
   float: left;
-  font-weight: bold;
 }
 
-.header-nav-logo > a {
+.graph-section{
+  display: flex;
+  justify-content: center;
 }
-
-.header-nav-logo > a:hover {
-}
-
-.header-nav-list {
-  float: right;
-}
-
-.header-nav-list > li {
-  float: left;
-}
-
