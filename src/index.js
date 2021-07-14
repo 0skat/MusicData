@@ -2,6 +2,7 @@
 const songs = require ("./SongData.json")
 
 
+
 document.addEventListener("DOMContentLoaded", ()=>{
   console.log(songs[0].acousticness)
 })
@@ -54,7 +55,7 @@ function createTempoRows(arr) {
 
 //Accoustic Chart
 anychart.onDocumentReady(function() {
- 
+  anychart.theme(anychart.themes.darkBlue)
   // set the data
   var data = {
       header: ["Song Title", "Accouticness (dB)"],
@@ -78,6 +79,8 @@ anychart.onDocumentReady(function() {
 
 //Danceability chart 
 anychart.onDocumentReady(function() {
+  anychart.theme(anychart.themes.darkBlue)
+
   var data = {
       header: ["Song Title", "Danceability"],
       rows: 
@@ -96,6 +99,8 @@ anychart.onDocumentReady(function() {
 
 //Popularity chart 
 anychart.onDocumentReady(function() {
+  anychart.theme(anychart.themes.darkBlue)
+
   var data = {
       header: ["Song Title", "Popularity"],
       rows: 
@@ -114,6 +119,9 @@ anychart.onDocumentReady(function() {
 
 //Energy chart 
 anychart.onDocumentReady(function() {
+
+  anychart.theme(anychart.themes.darkBlue)
+  
   var data = {
       header: ["Song Title", "Energy"],
       rows: 
@@ -132,6 +140,9 @@ anychart.onDocumentReady(function() {
 
 //Tempo chart 
 anychart.onDocumentReady(function() {
+
+  anychart.theme(anychart.themes.darkBlue)
+
   var data = {
       header: ["Song Title", "Tempo"],
       rows: 
@@ -139,6 +150,7 @@ anychart.onDocumentReady(function() {
   };
 
   var chart = anychart.column();
+
 
   chart.data(data);
 
@@ -148,3 +160,9 @@ anychart.onDocumentReady(function() {
   chart.draw();
 });
 
+
+
+// let flkty = new Flickity('.graphs', {
+//   contain: true,
+//   cellAlign: 'left'
+// }); 

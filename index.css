@@ -2,34 +2,86 @@ body {
   background-color: rgb(117, 20, 20);
 }
 
-.side-bar{
-position: fixed;
-top: 150px;
-bottom: 300px;
-overflow: auto;
-border-radius: 150px;
-display: -moz-box;
 
+
+.playlist{
+ float: right;
+ width: auto;  
 }
 
-.side-bar img{
-  width: 200px; 
-  height: 200px;
-  border-radius: 150px;
-  margin: 50px;
+/* CSS for coarousel */
+.graphs {
+  height: 100px;
+  padding-bottom: 33.3%;
 }
 
 .chart{
-  margin: 50px;
   display: flex;
-  width: 100%;
-  align-content: center;
+  margin: 50px;
+  width: 50%;
+  height: 200px;
+  border-radius: 10px;
 }
 
-.playlist{
-  display: flex;
-  width: 80px;
-  height: 80px;
-  align-content: space-between;
-  
+
+/* project info */
+
+.info{
+  display: inline-block;
+  justify-content: left;
+  border: solid black 2px;
+  width: 200px;
+  margin-left: 50px;
 }
+
+div > h1{
+  font-size: x-large;
+
+  text-align: center;
+}
+
+/* icons/ nav bar */
+.icon {
+ width: 25px;
+ height: 25px;
+}
+
+.header {
+  background: black;
+  color: white;
+  font-weight: bold;
+}
+
+.header a {
+  display: block;
+  padding: 20px;
+}
+
+.header a:hover {
+  background: black;
+}
+
+.header-nav {
+  width: 800px;
+  margin: auto;
+}
+
+.header-nav-logo {
+  float: left;
+  font-weight: bold;
+}
+
+.header-nav-logo > a {
+}
+
+.header-nav-logo > a:hover {
+}
+
+.header-nav-list {
+  float: right;
+}
+
+.header-nav-list > li {
+  float: left;
+}
+
