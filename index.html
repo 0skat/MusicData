@@ -35,34 +35,64 @@
     
     
     
-    
-    <section class="info" id="About">
-      <h1>Project info</h1>
-      <p> The purpose of this project is to compare accousticness,danceabilty, popularity, energy and tempo of eight songs. 
-        The songs chosen, are by some of my currently most listened to artist. 
-        This was determined by accesing my own user data through Spotify web services. 
-        A third-party dataset was used to compile the data for the selected songs and to create the graphs shown. </p>
-        <div class="playlist">
-            <iframe src="https://open.spotify.com/embed/playlist/1gd5xHych60DtmaIKSSvuv" width="100%" height="300px" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        </div>
+    <main class="center"> 
+      <section class="side-bar" id="About">
+        <h1>Project Info</h1>
+        <p> The purpose of this project is to compare accousticness,danceabilty, popularity, energy and tempo of eight songs. 
+          The songs chosen, are by some of my currently most listened to artist. 
+          This was determined by accesing my own user data through Spotify web services. 
+          A third-party dataset was used to compile the data for the selected songs and to create the graphs shown. </p>
       </section>
-
-
-    <section class="graph-section"> 
-      <div class="graphs" id="graph" data-flickity='{ "wrapAround": true, "prevNextButtons": false, "percentPosition": false}'> 
-        
-        <p class="chart" id="Accoustic"></p>
-
-        <p class="chart" id="Dance"></p>
-
-        <p class="chart" id="Popular"></p>
-
-        <p class="chart" id="Energy"></p>
-
-        <p class="chart" id="Tempo"></p>
+      <!-- <h1>Technologies</h1>  
+      <ul>
+        <li>Anychart API: Create graphs </li>
+        <li>Flickity API: Create carousel </li>
+        <li>JavaScript: Used to handle JSON data files and handle logic to render graphs </li>
+        <li>CSS: For styling and formatting the componenets of the page</li>
+      </ul>  -->
+      <div class="graph-section"> 
+        <section class="graphs" id="graph" data-flickity='{ "wrapAround": true, "prevNextButtons": false}'> 
+          
+          <p class="chart" id="Accoustic"></p>
+          
+          <p class="chart" id="Dance"></p>
+          
+          <p class="chart" id="Popular"></p>
+          
+          <p class="chart" id="Energy"></p>
+          
+          <p class="chart" id="Tempo"></p>
+        </section>
       </div>
-    </section>
-    
+
+      <div class="side-bar" id="About">
+        <h1>Project Info</h1>
+        <p> The purpose of this project is to compare accousticness,danceabilty, popularity, energy and tempo of eight songs. 
+          The songs chosen, are by some of my currently most listened to artist. 
+          This was determined by accesing my own user data through Spotify web services. 
+          A third-party dataset was used to compile the data for the selected songs and to create the graphs shown. </p>
+      </div>
+    </main>
+      
+      
+      
+      <div class="playlist">
+          <iframe class="player" src="https://open.spotify.com/embed/playlist/1gd5xHych60DtmaIKSSvuv" frameBorder="0" allowtransparency="true"
+           allow="encrypted-media">
+          </iframe>
+          <section class="albums">
+            <ul>
+              <li><button onclick="displayInfo()"> <img class="album-cover" src="src/albumpics/porter.png" id="1"> </button></li>
+              <li><a href=""> <img class="album-cover" src="src/albumpics/IsiahRashad.png" id="2"> </a></li>
+              <li><a href=""> <img class="album-cover" src="src/albumpics/ChicanoBatman.png" id="3"> </a></li>
+              <li><a href=""> <img class="album-cover" src="src/albumpics/Marias.png" id="4"> </a></li>
+              <li><a href=""> <img class="album-cover" src="src/albumpics/Freddie.png" id="5"> </a></li>
+              <li><a href=""> <img class="album-cover" src="src/albumpics/lordEcho.png" id="6"> </a></li>
+              <li><a href=""> <img class="album-cover" src="src/albumpics/juniorH.png" id="7"> </a></li>
+              <li><a href=""> <img class="album-cover" src="src/albumpics/freeNationals.png" id="8"> </a></li>
+            </ul>
+          </section>
+      </div>
   
     
 

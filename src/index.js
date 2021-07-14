@@ -161,7 +161,7 @@ anychart.onDocumentReady(function() {
 });
 
 
-
+// attempted to create carousel in js didnt work out
 // let flkty = new Flickity('.graphs', {
 //   contain: true,
 //   cellAlign: 'left'

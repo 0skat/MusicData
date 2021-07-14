@@ -7,7 +7,14 @@ body {
 
 .playlist{
  margin-left: 1px;
-margin-top: 20px;
+margin-top: 150px;
+display: flex;
+justify-content: left;
+}
+
+.player{
+  width: auto;
+  height: 300px;
 }
 
 /* CSS for coarousel */
@@ -16,36 +23,48 @@ margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-content: stretch;
+  justify-self: center;
   overflow: auto;
-  width: 500px;
- 
+  width: 600px;
+}
+.graph-section{
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  width: auto;
 }
 
 .chart{
   /* display: inline-block; */
   margin: 50px;
-  width: 50%;
-  height: 200px;
-  border-radius: 10px;
+  width: 60%; 
+  height: auto;
+  /* border-radius: 500px; */
 }
 
 
 /* project info */
+.center{
+  display: flex;
+  justify-content: space-between;
+}
 
-.info{
+
+.side-bar{ 
   display: inline-block;
   justify-content: left;
   border: solid black 2px;
-  width: 250px;
+  width: 25%;
   margin-top: 100px;
-  height: 750px;
-}
+  height: auto;
+} 
 
 section > h1{
   font-size: x-large;
   color: whitesmoke;
   text-align: center;
 }
+
 section > p{
   color: white;
   text-indent: 10px;
@@ -60,7 +79,7 @@ section > p{
 }
 
 .header {
-  background: black;
+  background: rgb(212, 190, 208);
   color: white;
   font-weight: bold;
 }
@@ -78,6 +97,7 @@ section > p{
   width: 800px;
   margin: auto;
   display: flex;
+  justify-content: space-between;
 }
 
 .header-nav-logo > img  {
@@ -90,15 +110,26 @@ section > p{
   display: flex;
 }
 
-.header-nav-list > li {
-  /* float: left; */
-}
 
 .header-nav-logo {
   float: left;
 }
 
-.graph-section{
+.albums{
+  display: flex; 
+  justify-content: space-evenly;
+  width: 550px;
+  height: 100px;
+}
+.albums > ul {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 50px;
+}
+.album-cover{
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  display: inline;
 }
