@@ -2,9 +2,62 @@
 const songs = require ("./SongData.json")
 
 
+function createAlbumInfo(){
+  let parent = document.querySelector(".albums"); 
+  let unordered = document.createElement("ul"); 
+  parent.appendChild(unordered); 
+
+  for(let i = 0; i < songs.length; i++){
+    
+    let listElement = document.createElement("li"); 
+    listElement.dataset.index = i; 
+    unordered.appendChild(listElement); 
+
+    let image = document.createElement("img"); 
+    listElement.appendChild(image); 
+
+    let imageSrc = songs[i].src; 
+    image.setAttribute('class', 'album-art')
+    image.setAttribute("src", imageSrc); 
+    listElement.addEventListener("click", (e)=> {
+      e.preventDefault(); 
+      displayInfo(e); 
+    })
+  }
+    
+}
+
+function displayInfo(e) {
+  // console.log(e.currentTarget)
+  // console.log(e.currentTarget.dataset)
+
+  let index = e.currentTarget.dataset.index; 
+  let placeData = document.querySelector(".popup");
+  let newList = document.createElement("ul")
+  placeData.appendChild(newList)
+  let data = songs[index];
+  // console.log(data); 
+  
+
+  let keys = Object.keys(data)
+  console.log(keys);
+
+  for(let i = 0; i < keys.length; i++){
+    let temp = keys[i];
+    let newOption = new Option(temp, data[temp])
+    // placeData.innerHTML = `${temp}: ${data[temp]}`
+    newList.appendChild(newOption);
+  }
+  
+}
+
+
+
 
 document.addEventListener("DOMContentLoaded", ()=>{
-  console.log(songs[0].acousticness)
+  createAlbumInfo(); 
+  
+  
 })
   
 //methods to populate chart data 
@@ -166,3 +219,13 @@ anychart.onDocumentReady(function() {
 //   contain: true,
 //   cellAlign: 'left'
 // }); 
+// function displayInfo(x){
+//   type = document.getElementById(`${x}`)
+//   if(type.style.display === "none"){
+//     type.style.display = "block"
+//   }
+//   songs[x].forEach(element => {
+//     type.innerHTML = song.acousticness; 
+//   });
+// }
+

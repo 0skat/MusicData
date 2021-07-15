@@ -133,3 +133,23 @@ section > p{
   height: 100px;
   display: inline;
 }
+
+.album-cover > p{
+  display: none;
+}
+
+
+.popup{
+  display: flex;
+  justify-content: space-evenly;
+  width: 550px;
+  height: 100px;
+
+}
+.album-art {
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  display: inline;
+
+}

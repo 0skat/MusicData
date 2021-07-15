@@ -18,7 +18,8 @@
     "popularity": 58,
     "release_date": "2004-11-11",
     "speechiness": 0.0344,
-    "tempo": 134.973
+    "tempo": 134.973,
+    "src": "src/albumpics/porter.png"
   },
   {
     "valence": 0.57,
@@ -39,7 +40,8 @@
     "popularity": 63,
     "release_date": "2014-01-28",
     "speechiness": 0.248,
-    "tempo": 80.939
+    "tempo": 80.939,
+    "src": "src/albumpics/IsiahRashad.png"
   },
   {
     "valence": 0.514,
@@ -60,7 +62,8 @@
     "popularity": 44,
     "release_date": "2010-06-25",
     "speechiness": 0.0329,
-    "tempo": 92.322
+    "tempo": 92.322,
+    "src": "src/albumpics/ChicanoBatman.png"
   },
   {
     "valence": 0.587,
@@ -81,7 +84,8 @@
     "popularity": 67,
     "release_date": "2017-06-14",
     "speechiness": 0.0617,
-    "tempo": 118.065
+    "tempo": 118.065,
+    "src": "src/albumpics/Marias.png"
   },
   {
     "valence": 0.256,
@@ -102,7 +106,8 @@
     "popularity": 56,
     "release_date": "2014-03-18",
     "speechiness": 0.203,
-    "tempo": 91.546
+    "tempo": 91.546,
+    "src": "src/albumpics/Freddie.png"
   },
   {
     "valence": 0.592,
@@ -123,7 +128,8 @@
     "popularity": 65,
     "release_date": "2010-12-06",
     "speechiness": 0.0576,
-    "tempo": 97.201
+    "tempo": 97.201,
+    "src": "src/albumpics/lordEcho.png"
   },
   {
     "valence": 0.734,
@@ -144,7 +150,8 @@
     "popularity": 75,
     "release_date": "2020-03-27",
     "speechiness": 0.047,
-    "tempo": 99.746
+    "tempo": 99.746,
+    "src": "src/albumpics/juniorH.png"
   },
   {
     "valence": 0.898,
@@ -165,6 +172,7 @@
     "popularity": 62,
     "release_date": "2019-12-13",
     "speechiness": 0.271,
-    "tempo": 141.85
+    "tempo": 141.85,
+    "src": "src/albumpics/freeNationals.png"
   }
 ]
