@@ -65,6 +65,7 @@ function displayInfo(e) {
 document.addEventListener("DOMContentLoaded", ()=>{
   createAlbumInfo(); 
   search(); 
+  addElement(); 
   
 })
   
@@ -241,7 +242,7 @@ function getName(){
 
   let userInput = document.querySelector(".artistName").value
   console.log(userInput)
-  
+  // implement bsearch for bigger dataset? 
   for(let i = 0; i < songs.length; i++){
     if(songs[i].artists === `${userInput}`)
     displaySearch(songs[i]);  
@@ -284,4 +285,9 @@ function displaySearch(e) {
     newList.appendChild(newOption);
   }
   
+}
+let artistArray = [];
+function addElement(){
+  let name = document.querySelector(".addArtist").value
+  artistArray.push(name); 
 }
