@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="reset.css">
     <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
-
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+      </style>
     <script src="https://cdn.anychart.com/releases/8.10.0/themes/dark_blue.js" ></script>
     <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js" ></script>
-
+    <link rel="icon" type="image/png" href="src/images/logo.png"/>
 
     
     <title>Project Name</title>
@@ -65,13 +67,13 @@
         </section>
       </div>
 
-      <div class="side-bar" id="About">
-        <h1>Project Info</h1>
-        <p> The purpose of this project is to compare accousticness,danceabilty, popularity, energy and tempo of eight songs. 
-          The songs chosen, are by some of my currently most listened to artist. 
-          This was determined by accesing my own user data through Spotify web services. 
-          A third-party dataset was used to compile the data for the selected songs and to create the graphs shown. </p>
-      </div>
+      <section class="side-bar" id="About">
+        <h1>How To</h1>
+        <p> On the left you can scroll through the data created with the songs in the playlist provided below. 
+          By clicking on the album cover, you can access that particular songs' data. Along with the data provided in these tables, 
+          each song has other data not provided in the graphs.
+         </p>
+      </section>
     </main>
       
       
@@ -94,11 +96,11 @@
               <li><a href=""> <img class="album-cover" src="src/albumpics/freeNationals.png" id="7"> </a></li>
             </ul> -->
           </section>
+          <div class="popup hidden">
+      
+          </div>
       </div>
   
-    <div class="popup hidden">
-      
-    </div>
 
 </body>
 <script src="./dist/main.js"></script>

@@ -44,7 +44,7 @@ function displayInfo(e) {
 
   for(let i = 0; i < keys.length; i++){
     let temp = keys[i];
-    let newOption = new Option(temp, data[temp])
+    let newOption = new Option(`${temp}: ${data[temp]}`, data[temp])
     // placeData.innerHTML = `${temp}: ${data[temp]}`
     newList.appendChild(newOption);
   }

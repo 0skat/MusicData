@@ -1,15 +1,17 @@
 body {
-  background-color: rgb(117, 20, 20);
-  font-family: sans-serif;
+  background-color: #505a5b;
+  font-family: 'Major Mono Display', monospace;;
 }
 
 
 
 .playlist{
- margin-left: 1px;
+ /* margin-left: 50px; */
 margin-top: 150px;
 display: flex;
-justify-content: left;
+justify-content: space-between;
+margin-bottom: 50px;
+
 }
 
 .player{
@@ -23,22 +25,23 @@ justify-content: left;
   display: flex;
   flex-direction: column;
   align-content: stretch;
-  justify-self: center;
+  /* justify-self: center; */
   overflow: auto;
-  width: 600px;
+  width: 700px;
 }
 .graph-section{
   display: flex;
   justify-content: center;
-  padding-top: 50px;
+  flex-direction: column;
+  padding-top: 150px;
   width: auto;
 }
 
 .chart{
   /* display: inline-block; */
-  margin: 50px;
-  width: 60%; 
-  height: auto;
+  margin: 20px;
+  /* width: 60%;  */
+  /* height: auto; */
   /* border-radius: 500px; */
 }
 
@@ -47,6 +50,7 @@ justify-content: left;
 .center{
   display: flex;
   justify-content: space-between;
+  height: 450px;
 }
 
 
@@ -57,19 +61,21 @@ justify-content: left;
   width: 25%;
   margin-top: 100px;
   height: auto;
+  background-color: rgba(68, 61, 58, 0.211)
 } 
 
 section > h1{
   font-size: x-large;
-  color: whitesmoke;
+  color: #94B0DA;
   text-align: center;
+  font-family: 'Major Mono Display', monospace;;
 }
 
 section > p{
-  color: white;
+  color: #DCEDFF;
   text-indent: 10px;
   letter-spacing: 2px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Major Mono Display', monospace; ;
 }
 
 /* icons/ nav bar */
@@ -79,7 +85,7 @@ section > p{
 }
 
 .header {
-  background: rgb(212, 190, 208);
+  background: #343f3e;
   color: white;
   font-weight: bold;
 }
@@ -87,6 +93,7 @@ section > p{
 .header a {
   display: block;
   padding: 10px;
+  color: white;
 }
 
 .header a:hover {
@@ -120,6 +127,7 @@ section > p{
   justify-content: space-evenly;
   width: 550px;
   height: 100px;
+  margin-left: 10%;
 }
 .albums > ul {
   display: flex;
@@ -134,18 +142,19 @@ section > p{
   display: inline;
 }
 
-.album-cover > p{
+/* .album-cover > p{
   display: none;
-}
+} */
 
 
-.popup{
+/* .popup{
   display: flex;
   justify-content: space-evenly;
   width: 550px;
   height: 100px;
+  border: solid black 20px;
 
-}
+} */
 .album-art {
   margin: 10px;
   width: 100px;
