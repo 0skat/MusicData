@@ -64,7 +64,7 @@ function displayInfo(e) {
 
 document.addEventListener("DOMContentLoaded", ()=>{
   createAlbumInfo(); 
-  
+  search(); 
   
 })
   
@@ -237,3 +237,51 @@ anychart.onDocumentReady(function() {
 //   });
 // }
 
+function getName(){
+
+  let userInput = document.querySelector(".artistName").value
+  console.log(userInput)
+  
+  for(let i = 0; i < songs.length; i++){
+    if(songs[i].artists === `${userInput}`)
+    displaySearch(songs[i]);  
+  }
+  return "Sorry That Artist Info is not available"; 
+}; 
+
+
+
+function search(){
+  let button = document.querySelector(".submit")
+  button.addEventListener("click", (e)=>{
+    e.preventDefault();
+    console.log(e.currentTarget.value)
+    console.log(e.Target)
+    getName(); 
+  })
+}
+
+
+
+function displaySearch(e) {
+ console.log(e);
+ let keys = Object.keys(e)
+ console.log(keys);
+
+  let placeSearch = document.querySelector(".searchResult");
+  let newList = document.createElement("ul")
+  newList.setAttribute("class", "infoDelete")
+  placeSearch.appendChild(newList)
+  // let data = songs[index];
+  // console.log(data); 
+  
+
+
+  for(let i = 0; i < keys.length; i++){
+    let temp = keys[i];
+    let newOption = new Option(`${temp}: ${e[temp]}`, e[temp])
+
+    newList.appendChild(newOption);
+  }
+  
+}

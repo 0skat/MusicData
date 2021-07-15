@@ -12,7 +12,7 @@
     <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
-      </style>
+    </style>
     <script src="https://cdn.anychart.com/releases/8.10.0/themes/dark_blue.js" ></script>
     <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js" ></script>
     <link rel="icon" type="image/png" href="src/images/logo.png"/>
@@ -40,10 +40,8 @@
     <main class="center"> 
       <section class="side-bar" id="About">
         <h1>Project Info</h1>
-        <p> The purpose of this project is to compare accousticness,danceabilty, popularity, energy and tempo of eight songs. 
-          The songs chosen, are by some of my currently most listened to artist. 
-          This was determined by accesing my own user data through Spotify web services. 
-          A third-party dataset was used to compile the data for the selected songs and to create the graphs shown. </p>
+        <p> With Musical Stats, its easy to compare your favorite tracks.
+          There are millions of tracks on our database, compiled through Spotify's API that you can access for free! </p>
       </section>
       <!-- <h1>Technologies</h1>  
       <ul>
@@ -70,9 +68,10 @@
       <section class="side-bar" id="About">
         <h1>Learn More</h1>
         <p> Scroll through the data graphs to find out how each song compares to each other.
-          Click on the album cover, to learn more about the songs provided in the playlist below! 
+           Click on the album cover, to learn more about the songs provided in the playlist below!
          </p>
       </section>
+
     </main>
       
       
@@ -99,6 +98,18 @@
       
           </div>
       </div>
+
+     
+       <div>
+        <h1>Seach for an Artist</h1>
+          <input type="text" class="artistName">
+          <button class="submit">Submit</button>
+        <section class="searchResult"> </section>
+        <section class="createGraph"></section>
+      </div>
+      
+      
+      
   
 
 </body>
