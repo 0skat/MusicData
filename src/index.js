@@ -19,8 +19,14 @@ function createAlbumInfo(){
     let imageSrc = songs[i].src; 
     image.setAttribute('class', 'album-art')
     image.setAttribute("src", imageSrc); 
+
     listElement.addEventListener("click", (e)=> {
       e.preventDefault(); 
+      let ulToDelete = document.querySelector(".infoDelete")
+      
+      if(ulToDelete){
+        ulToDelete.remove();
+      } 
       displayInfo(e); 
     })
   }
@@ -30,10 +36,12 @@ function createAlbumInfo(){
 function displayInfo(e) {
   // console.log(e.currentTarget)
   // console.log(e.currentTarget.dataset)
+  displayInfo.called = true; 
 
   let index = e.currentTarget.dataset.index; 
   let placeData = document.querySelector(".popup");
   let newList = document.createElement("ul")
+  newList.setAttribute("class", "infoDelete")
   placeData.appendChild(newList)
   let data = songs[index];
   // console.log(data); 
