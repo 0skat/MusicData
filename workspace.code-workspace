@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "newProject",
+			"path": "."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}

@@ -18,89 +18,47 @@
     <link rel="icon" type="image/png" href="src/images/logo.png"/>
 
     
-    <title>Project Name</title>
+    <title>Music Data</title>
   </head>
   
   <body>
      
   <header class="header">  
     <nav class="header-nav group">
-      <a class="header-nav-logo" href="https://0skat.github.io/MusicData/"><img src="src/images/logo.png"></a>
+      <a class="header-nav-logo" href="https://0skat.github.io/MusicData/" ><img src="src/images/logo.png"></a>
       <ul class="header-nav-list">
          <li><a href="#info">About</a> </li>
          <li><a href="#graph">Music Comparison Graphs</a> </li>
-         <li><a href="https://www.linkedin.com/in/oscar-vazquez-650471165/"><img src="src/images/linkedin.png" class="icon"></a> </li>
-         <li><a href="https://github.com/0skat/MusicData"> <img src="src/images/github.png" class="icon"> </a></li>
+         <li><a href="https://www.linkedin.com/in/oscar-vazquez-650471165/" target="_blank"><img src="src/images/linkedin.png" class="icon"></a> </li>
+         <li><a href="https://github.com/0skat/MusicData" target="_blank"> <img src="src/images/github.png" class="icon"> </a></li>
         </ul>
       </nav>
     </header>
     
-    
-    
-    <main class="center"> 
-      <section class="side-bar" id="About">
-        <h1>Project Info</h1>
-        <p> With Musical Stats, its easy to compare your favorite tracks.
-          There are millions of tracks on our database, compiled through Spotify's API that you can access for free! </p>
+     <select class="options" id="variables" value=''>
+        
+      </select>
+
+      
+    <div class="graph-section"> 
+      <section class="graphs" id="graph" > 
+        
+        <p class="chart" id="Accoustic"></p>
+        
+        <p class="chart" id="Dance"></p>
+        
+        <p class="chart" id="Popular"></p>
+        
+        <p class="chart" id="Energy"></p>
+        
+        <p class="chart" id="Tempo"></p>
+
+        <p class="chart" id="custom"></p>
+
       </section>
-      <!-- <h1>Technologies</h1>  
-      <ul>
-        <li>Anychart API: Create graphs </li>
-        <li>Flickity API: Create carousel </li>
-        <li>JavaScript: Used to handle JSON data files and handle logic to render graphs </li>
-        <li>CSS: For styling and formatting the componenets of the page</li>
-      </ul>  -->
-      <div class="graph-section"> 
-        <section class="graphs" id="graph" data-flickity='{ "wrapAround": true, "prevNextButtons": false}'> 
-          
-          <p class="chart" id="Accoustic"></p>
-          
-          <p class="chart" id="Dance"></p>
-          
-          <p class="chart" id="Popular"></p>
-          
-          <p class="chart" id="Energy"></p>
-          
-          <p class="chart" id="Tempo"></p>
-        </section>
-      </div>
-
-      <section class="side-bar" id="About">
-        <h1>Learn More</h1>
-        <p> Scroll through the data graphs to find out how each song compares to each other.
-           Click on the album cover, to learn more about the songs provided in the playlist below!
-         </p>
-      </section>
-
-    </main>
-      
-      
-      
-      <div class="playlist">
-          <iframe class="player" src="https://open.spotify.com/embed/playlist/1gd5xHych60DtmaIKSSvuv" frameBorder="0" allowtransparency="true"
-           allow="encrypted-media">
-          </iframe>
-          <section class="albums">
-            <!-- <ul>
-              <li><button onclick="displayInfo(0)"> <img class="album-cover" src="" id="0"> </button>
-              <p> </p>
-              </li>
-              <li><a onclick="displayInfo(1)"> <img class="album-cover" src="src/albumpics/IsiahRashad.png" id="1"> </a></li>
-              <li><a href=""> <img class="album-cover" src="src/albumpics/ChicanoBatman.png" id="2"> </a></li>
-              <li><a href=""> <img class="album-cover" src="src/albumpics/Marias.png" id="3"> </a></li>
-              <li><a href=""> <img class="album-cover" src="src/albumpics/Freddie.png" id="4"> </a></li>
-              <li><a href=""> <img class="album-cover" src="src/albumpics/lordEcho.png" id="5"> </a></li>
-              <li><a href=""> <img class="album-cover" src="src/albumpics/juniorH.png" id="6"> </a></li>
-              <li><a href=""> <img class="album-cover" src="src/albumpics/freeNationals.png" id="7"> </a></li>
-            </ul> -->
-          </section>
-          <div class="popup hidden">
-      
-          </div>
-      </div>
-
+    </div>
      
-       <div>
+       <!-- <div>
         <h1>Seach for an Artist</h1>
           <input type="text" class="artistName">
           <button class="submit">Search</button>
@@ -109,11 +67,12 @@
           <label for="">Create Graph</label>
           <input type="text" class="addArtist">
           <input type="button" value="Add Artist" onclick="addElement();">
-
         </section>
 
-      </div>
+        
+      </div> -->
       
+     
       
       
   

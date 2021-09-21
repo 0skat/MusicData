@@ -69,14 +69,16 @@ section > h1{
   font-size: x-large;
   color: #94B0DA;
   text-align: center;
-  font-family: 'Major Mono Display', monospace;;
+  /* font-family: 'Major Mono Display', monospace;; */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 section > p{
   color: #DCEDFF;
   text-indent: 10px;
   letter-spacing: 2px;
-  font-family: 'Major Mono Display', monospace; 
+  /* font-family: 'Major Mono Display', monospace;  */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   word-wrap: break-word;
 }
 

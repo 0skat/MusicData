@@ -1,6 +1,13 @@
 // const file = require ("./ArtistSales.json")
+const { select } = require("d3");
 const songs = require ("./SongData.json")
 
+document.addEventListener("DOMContentLoaded", ()=>{
+  options(); 
+  // createAlbumInfo(); 
+  // search(); 
+  // addElement(); 
+})
 
 function createAlbumInfo(){
   let parent = document.querySelector(".albums"); 
@@ -62,12 +69,6 @@ function displayInfo(e) {
 
 
 
-document.addEventListener("DOMContentLoaded", ()=>{
-  createAlbumInfo(); 
-  search(); 
-  addElement(); 
-  
-})
   
 //methods to populate chart data 
 function createAccRows(arr) {
@@ -223,26 +224,10 @@ anychart.onDocumentReady(function() {
 });
 
 
-// attempted to create carousel in js didnt work out
-// let flkty = new Flickity('.graphs', {
-//   contain: true,
-//   cellAlign: 'left'
-// }); 
-// function displayInfo(x){
-//   type = document.getElementById(`${x}`)
-//   if(type.style.display === "none"){
-//     type.style.display = "block"
-//   }
-//   songs[x].forEach(element => {
-//     type.innerHTML = song.acousticness; 
-//   });
-// }
-
 function getName(){
 
   let userInput = document.querySelector(".artistName").value
   console.log(userInput)
-  // implement bsearch for bigger dataset? 
   for(let i = 0; i < songs.length; i++){
     if(songs[i].artists === `${userInput}`)
     displaySearch(songs[i]);  
@@ -264,30 +249,89 @@ function search(){
 
 
 
-function displaySearch(e) {
- console.log(e);
- let keys = Object.keys(e)
- console.log(keys);
+// function displaySearch(e) {
+//  console.log(e);
+//  let keys = Object.keys(e)
+//  console.log(keys);
 
-  let placeSearch = document.querySelector(".searchResult");
-  let newList = document.createElement("ul")
-  newList.setAttribute("class", "infoDelete")
-  placeSearch.appendChild(newList)
-  // let data = songs[index];
-  // console.log(data); 
+//   let placeSearch = document.querySelector(".searchResult");
+//   let newList = document.createElement("ul")
+//   newList.setAttribute("class", "infoDelete")
+//   placeSearch.appendChild(newList)
+//   // let data = songs[index];
+//   // console.log(data); 
   
 
 
-  for(let i = 0; i < keys.length; i++){
-    let temp = keys[i];
-    let newOption = new Option(`${temp}: ${e[temp]}`, e[temp])
+//   for(let i = 0; i < keys.length; i++){
+//     let temp = keys[i];
+//     let newOption = new Option(`${temp}: ${e[temp]}`, e[temp])
 
-    newList.appendChild(newOption);
+//     newList.appendChild(newOption);
+//   }
+  
+// }
+// let artistArray = [];
+// function addElement(){
+//   let name = document.querySelector(".addArtist").value
+//   artistArray.push(name); 
+// }
+
+// let valence; year; acousticness; danceability; energy; explicit; instrumentalness; liveness; loudness; popularity;
+// speechiness; tempo; 
+
+let variables = Object.keys(songs[0])
+const filteredVariables =  variables.filter(key => key !==  'src' && key !== 'release_date' && key !=='duration_ms' && key !=='id' && key !=='mode')
+
+console.log(variables)
+
+function options(){
+  let select = document.querySelector('.options')
+  for(let i = 0; i < filteredVariables.length; i++){
+    let option = new Option(filteredVariables[i], filteredVariables[i])
+    select.add(option, undefined)
   }
+  select.addEventListener('input', (e)=>{
+    console.log(e)
+    e.preventDefault()
+    let chartVariable = e.Target.value; 
+    customChart(chartVariable)
+  })
+}
   
+//Energy-data 
+function createCustomRows(arr, variable) {
+  const tempoRows = []; 
+  for(let i = 0; i < arr.length; i++){
+    tempoRows.push([arr[i].name + ", "+ arr[i].artists, arr[i].variable])
+  }
+  return tempoRows; 
+};
+
+
+const customChart = (variable) => {
+  // anychart.onDocumentReady(function(variable) {
+  anychart.theme(anychart.themes.darkBlue)
+  // set the data
+  var data = {
+      header: ["Song Title", `${variable}`],
+      rows: 
+        createCustomRows(songs, variable)
+  };
+
+  // create the chart
+  var chart = anychart.column();
+
+  // add the data
+  chart.data(data);
+
+  // set the chart title
+  chart.title(`${variable} Levels, by Song`);
+
+  // draw
+  chart.container(`custom`);
+  chart.draw();
+
 }
-let artistArray = [];
-function addElement(){
-  let name = document.querySelector(".addArtist").value
-  artistArray.push(name); 
-}
+
+
