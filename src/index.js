@@ -1,6 +1,7 @@
 // const file = require ("./ArtistSales.json")
 const { select } = require("d3");
-const songs = require ("./SongData.json")
+const songs = require ("./SongData.json");
+let chartVariable;
 
 document.addEventListener("DOMContentLoaded", ()=>{
   options(); 
@@ -41,8 +42,6 @@ function createAlbumInfo(){
 }
 
 function displayInfo(e) {
-  // console.log(e.currentTarget)
-  // console.log(e.currentTarget.dataset)
   displayInfo.called = true; 
 
   let index = e.currentTarget.dataset.index; 
@@ -51,11 +50,10 @@ function displayInfo(e) {
   newList.setAttribute("class", "infoDelete")
   placeData.appendChild(newList)
   let data = songs[index];
-  // console.log(data); 
   
 
   let keys = Object.keys(data)
-  console.log(keys);
+
 
   for(let i = 0; i < keys.length; i++){
     let temp = keys[i];
@@ -227,7 +225,6 @@ anychart.onDocumentReady(function() {
 function getName(){
 
   let userInput = document.querySelector(".artistName").value
-  console.log(userInput)
   for(let i = 0; i < songs.length; i++){
     if(songs[i].artists === `${userInput}`)
     displaySearch(songs[i]);  
@@ -241,8 +238,6 @@ function search(){
   let button = document.querySelector(".submit")
   button.addEventListener("click", (e)=>{
     e.preventDefault();
-    console.log(e.currentTarget.value)
-    console.log(e.Target)
     getName(); 
   })
 }
@@ -283,7 +278,6 @@ function search(){
 let variables = Object.keys(songs[0])
 const filteredVariables =  variables.filter(key => key !==  'src' && key !== 'release_date' && key !=='duration_ms' && key !=='id' && key !=='mode')
 
-console.log(variables)
 
 function options(){
   let select = document.querySelector('.options')
@@ -292,31 +286,42 @@ function options(){
     select.add(option, undefined)
   }
   select.addEventListener('input', (e)=>{
-    console.log(e)
     e.preventDefault()
-    let chartVariable = e.Target.value; 
+    // let chartVariable = select.options[select.selectedIndex].value;
+    chartVariable = select.options[select.selectedIndex].value;
     customChart(chartVariable)
   })
 }
   
 //Energy-data 
 function createCustomRows(arr, variable) {
-  const tempoRows = []; 
+  const tempRows = []; 
   for(let i = 0; i < arr.length; i++){
-    tempoRows.push([arr[i].name + ", "+ arr[i].artists, arr[i].variable])
+    tempRows.push([arr[i].name + ", "+ arr[i].artist, arr[i][`${variable}`]])
   }
-  return tempoRows; 
+  return tempRows
 };
+
+
+
 
 
 const customChart = (variable) => {
   // anychart.onDocumentReady(function(variable) {
+    // const tempRows = []; 
+    // for(let i = 0; i < songs.length; i++){
+    //   tempRows.push([songs[i].name + ", "+ songs[i].artist, songs[i].variable])
+    // }
+
+
+
   anychart.theme(anychart.themes.darkBlue)
   // set the data
   var data = {
       header: ["Song Title", `${variable}`],
       rows: 
         createCustomRows(songs, variable)
+        // tempRows
   };
 
   // create the chart
