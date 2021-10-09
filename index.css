@@ -24,13 +24,10 @@ margin-bottom: 50px;
   /* padding-bottom: 33.3%; */
   display: flex;
   flex-direction: column;
-  align-content: stretch;
-  /* justify-self: center; */
   overflow: auto;
-  width: 700px;
-  margin: 0 auto;
-  box-shadow: 5px 5px 20px 10px #d8d9dc;
+  width: 100%;
   border-radius: 3px;
+  margin-left: 3%;
 }
  
 .container{
@@ -44,6 +41,8 @@ margin-bottom: 50px;
   flex-direction: column;
   padding-top: 150px;
   width: 65%;
+  position: absolute;
+  top: 1%;
 }
 
 .anychart-credits{
@@ -52,7 +51,9 @@ margin-bottom: 50px;
 
 .playlist-container{
   box-shadow: 5px 20px 10px #d8d9dc;
-  margin-top: 5%;
+  margin-top: 20%;
+  position: fixed;
+  left: 3%;
 }
 
 .chart{
@@ -63,6 +64,17 @@ margin-bottom: 50px;
   /* border-radius: 500px; */
   /* box-shadow: 5px 5px 20px 10px #d8d9dc;
   border-radius: 3px; */
+}
+
+.custom{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-bottom: 2%;
+  background: none;
+  box-shadow: 10px 5px 15px #37474f;
+  width: 91%;
 }
 
 #custom div:first-of-type{
@@ -169,24 +181,39 @@ section > p{
   height: 100px;
   display: inline;
 }
-
-/* .album-cover > p{
-  display: none;
-} */
-
-
-/* .popup{
+.options{
+  margin-left: 4%;
+  border: none;
+  background: cornflowerblue;
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px 10px #d8d9dc;
+  font-weight: bold;
+  width: 10%;
+  font-size: 16px;
   display: flex;
-  justify-content: space-evenly;
-  width: 550px;
-  height: 100px;
-  border: solid black 20px;
-
-} */
+  position: fixed;
+  left: 85%;
+  top: 20%;
+}
 .album-art {
   margin: 10px;
   width: 100px;
   height: 100px;
   display: inline;
+}
 
+.button{
+  position: absolute;
+  margin-right: -7%;
+  box-shadow: 5px 5px 20px 10px #d8d9dc;
+  height: 7%;
+  border-radius: 10px;
+  background: lightcoral;
+  border: none;
+  color: black;
+  font-weight: bold;
+  margin-right: -10%;
+}
+tspan{
+  font-size: 12px;
 }
