@@ -74,7 +74,7 @@ margin-bottom: 50px;
   margin-bottom: 2%;
   background: none;
   box-shadow: 10px 5px 15px #37474f;
-  width: 91%;
+  width: 95%;
 }
 
 #custom div:first-of-type{
@@ -206,14 +206,13 @@ section > p{
   position: absolute;
   margin-right: -7%;
   box-shadow: 5px 5px 20px 10px #d8d9dc;
-  height: 7%;
   border-radius: 10px;
-  background: lightcoral;
+  background: #3eb2e5;
   border: none;
   color: black;
   font-weight: bold;
   margin-right: -10%;
 }
 tspan{
-  font-size: 12px;
+  font-size: 10px;
 }
