@@ -1,11 +1,12 @@
 // const file = require ("./ArtistSales.json")
-const { select } = require("d3");
+const { select, html } = require("d3");
 const songs = require ("./SongData.json");
 let chartVariable;
 let count = 0; 
 
 document.addEventListener("DOMContentLoaded", ()=>{
   options(); 
+  printPDF();
   // createAlbumInfo(); 
   // search(); 
   // addElement(); 
@@ -315,6 +316,7 @@ const customChart = (variable) => {
 
   let button = document.createElement('button')
   button.setAttribute('class', 'button');
+  button.setAttribute('data-html2pdf-ignore', 'true');
   button.setAttribute('key',`${count}`)
   button.innerHTML= 'Clear Graph'; 
 
@@ -360,3 +362,22 @@ const customChart = (variable) => {
 // deleteChart = () => {
 
 // }
+
+const printPDF = () =>{
+  const printButton = document.querySelector('.print')
+
+  printButton.addEventListener('click', (e) =>{
+    e.preventDefault()
+    let graphs = document.querySelector('.graphs')
+    let opt = {
+      margin:       0.01,
+      filename:     'musicGraphs.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2,} ,
+      jsPDF:        { unit: 'in', format: 'letter', orientation: 'l' }
+    };
+    html2pdf().set(opt).from(graphs).save()
+
+  })
+  
+}
