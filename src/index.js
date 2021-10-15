@@ -7,7 +7,7 @@ let count = 0;
 document.addEventListener("DOMContentLoaded", ()=>{
   options(); 
   printPDF();
-  hoverOVerText(); 
+  // hoverOVerText(); 
   // createAlbumInfo(); 
   // search(); 
   // addElement(); 
