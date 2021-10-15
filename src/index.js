@@ -7,6 +7,7 @@ let count = 0;
 document.addEventListener("DOMContentLoaded", ()=>{
   options(); 
   printPDF();
+  hoverOVerText(); 
   // createAlbumInfo(); 
   // search(); 
   // addElement(); 
@@ -380,4 +381,29 @@ const printPDF = () =>{
 
   })
   
+}
+
+// let orangeBorder = document.querySelector('.orange'); 
+// let notes = ['hey','my','name','is','oscar'];
+// let container = document.createElement('ul');
+// orangeBorder.append(container); 
+
+// for(let i=0; i < notes.length; i++){
+//   let note = document.createElement('div')
+//   note.innerText = notes[i]
+//   container.append(note)
+// }
+
+const hoverOVerText = () => {
+  let acousticness = document.getElementById('acousticness'); 
+  let modal = document.createElement('div')
+  modal.setAttribute('class', 'modal-background ')
+  let text = document.createElement('p')
+  text.innerHTML = 'lorem ipsum blah lorem ipsum blah lorem ipsum blah lorem ipsum blah '
+  modal.append(text)
+  acousticness.addEventListener('mouseover', e =>{
+    e.preventDefault(); 
+    acousticness.append(modal)
+  })
+  acousticness.removeEventListener()
 }

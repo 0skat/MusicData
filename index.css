@@ -271,3 +271,33 @@ div p{
   background: black;
   border-radius: 7px;
 }
+
+.orange{
+  width: 200px;
+  height: 200px;
+  border: solid 5px orange; 
+}
+
+.notes{
+  display: flex;
+  flex-direction: column;
+  margin-top: 35%;
+  margin-right: -25%
+}
+
+.notes-functions{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(1, 25, 52, 0.9);
+  z-index: 10;
+  overflow: scroll; 
+}
