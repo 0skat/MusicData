@@ -384,31 +384,31 @@ a{
   backface-visibility: hidden;
   animation: slideBg 200s ease-in-out infinite 0s;
   animation-timing-function: ease-in-out;
-  background-image: url(/Users/oscarpalacios/Desktop/AppAca/newProject/src/albumpics/ChicanoBatman.png);
+  background-image: url(src/albumpics/ChicanoBatman.png);
   opacity: 0.75;
 }
 @keyframes slideBg {
   0% {
-    background-image: url(/Users/oscarpalacios/Desktop/AppAca/newProject/src/albumpics/Freddie.png);
+    background-image: url(src/albumpics/Freddie.png);
   }
   14% {
-    background-image: url(/Users/oscarpalacios/Desktop/AppAca/newProject/src/albumpics/freeNationals.png);
+    background-image: url(src/albumpics/freeNationals.png);
   }
 
   42% {
-    background-image: url(/Users/oscarpalacios/Desktop/AppAca/newProject/src/albumpics/lordEcho.png);
+    background-image: url(src/albumpics/lordEcho.png);
   }
   56%{
-    background-image: url(/Users/oscarpalacios/Desktop/AppAca/newProject/src/albumpics/Marias.png);
+    background-image: url(src/albumpics/Marias.png);
   }
   70%{
-    background-image: url(/Users/oscarpalacios/Desktop/AppAca/newProject/src/albumpics/IsiahRashad.png);
+    background-image: url(src/albumpics/IsiahRashad.png);
   }
   84% {
-    background-image: url(/Users/oscarpalacios/Desktop/AppAca/newProject/src/albumpics/porter.png);
+    background-image: url(src/albumpics/porter.png);
   }
   100% {
-    background-image: url(/Users/oscarpalacios/Desktop/AppAca/newProject/src/albumpics/ChicanoBatman.png);
+    background-image: url(src/albumpics/ChicanoBatman.png);
   }
 }
 
