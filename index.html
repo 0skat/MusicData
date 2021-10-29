@@ -14,112 +14,119 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
     </style>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+    </style>
     <script src="https://cdn.anychart.com/releases/8.10.0/themes/dark_blue.js" ></script>
     <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js" ></script>
     <link rel="icon" type="image/png" href="src/images/logo.png"/>
-
+    
     
     <title>Music Data</title>
   </head>
   
   <body>
-     
-  <header class="header">  
-    <nav class="header-nav group">
-      <a class="header-nav-logo" href="https://0skat.github.io/MusicData/" ><img src="src/images/logo.png"></a>
-      <ul class="header-nav-list">
-         <li><a href="#info">About</a> </li>
-         <li><a href="#graph">Music Comparison Graphs</a> </li>
-         <li><a href="https://www.linkedin.com/in/oscar-vazquez-650471165/" target="_blank"><img src="src/images/linkedin.png" class="icon"></a> </li>
-         <li><a href="https://github.com/0skat/MusicData" target="_blank"> <img src="src/images/github.png" class="icon"> </a></li>
-        </ul>
-      </nav>
-    </header>
+    <div class="whole-page" id='SLIDE_BG'>
+      <header class="header">  
+        <nav class="header-nav group">
+          <a class="header-nav-logo" href="https://0skat.github.io/MusicData/" ><img src="src/images/logo.png"></a>
+          <ul class="header-nav-list">
+            <li><a href="#info"> <img src="https://img.icons8.com/ios/2x/info.png" class="icon"> </a> </li>
+            <li><a href="#graph"><img src="https://img.icons8.com/ios-filled/2x/graph.png" class='icon'></a> </li>
+            <li><a href="https://www.linkedin.com/in/oscar-vazquez-650471165/" target="_blank"><img src="src/images/linkedin.png" class="icon"></a> </li>
+            <li><a href="https://github.com/0skat/MusicData" target="_blank"> <img src="src/images/github.png" class="icon"> </a></li>
+          </ul>
+        </nav>
+      </header>
+      
+
+     <a href="#info"> <h1 class="welcome">Welcome</h1> </a>
+      
+    </div> 
     
     
-    <div class='container'>
-      <iframe class='playlist-container' src="https://open.spotify.com/embed/playlist/1gd5xHych60DtmaIKSSvuv?theme=0" width="15%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        <div class="graph-section"> 
-          <div class='intro'>
-             <p>
-            Welcome to Music Data, a project that compares a variety of musical attributes between
-             songs. For the scope of this project, I decided to curate eight songs that I love and had
-              access to from a data set created by Spotify. Spotify measures 
-              <span class="attributes" id='acousticness'> acousticness,</span> 
-              <span class="attributes" id='danceability'> danceability,</span> 
-              <span class="attributes" id='energy'> energy,</span> 
-              <span class="attributes" id='instrumentalness'> instrumentalness,</span> 
-              <span class="attributes" id='liveness'> liveness,</span> 
-              <span class="attributes" id='loudness'> loudness,</span> 
-              <span class="attributes" id='speechiness'> speechiness,</span> 
-              <span class="attributes" id='tempo'> tempo,</span> 
-              <span class="attributes" id='loudness'> loudness,</span> 
-              and  <span class="attributes" id='valence'> valence.</span>  I took all these attributes and used their values to draw comparisons between the selected tracks, which you can check out in the playlist on your left. To view these graphical comparisons, simply populate the desired musical attribute that interests you. You can populate as many graphs as you wish and delete the ones you no longer want to display. If you wish to save or print any of these graphs use the print button. 
-          </p>
+    
+
+      <!-- <div class="graph-section">  -->
+          <div style="display: flex; margin: 0 auto; width: 80%; " >
+             <iframe class='playlist-container' src="https://open.spotify.com/embed/playlist/1gd5xHych60DtmaIKSSvuv?theme=0" width="15%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              <div class='intro' id="info">
+                <p>
+                  Welcome to Music Data, a project that compares a variety of musical attributes between
+                  songs. For the scope of this project, only eight songs were selected based on the my likes and the Spotify data set that was acquired, through a third party source. 
+                  Spotify measures 
+                  <span class="attributes" id='acousticness'> acousticness,</span> 
+                  <span class="attributes" id='danceability'> danceability,</span> 
+                  <span class="attributes" id='energy'> energy,</span> 
+                  <span class="attributes" id='instrumentalness'> instrumentalness,</span> 
+                  <span class="attributes" id='liveness'> liveness,</span> 
+                  <span class="attributes" id='loudness'> loudness,</span> 
+                  <span class="attributes" id='speechiness'> speechiness,</span> 
+                  <span class="attributes" id='tempo'> tempo,</span> 
+                  and  <span class="attributes" id='valence'> valence.</span>
+                </p>
+              <!-- </div> -->
+            </div> 
           </div>
-         
-      <ul class="graphs" id="graph" > 
-        <!--         
-          <p class="chart" id="Accoustic"></p>
-          
-          <p class="chart" id="Dance"></p>
-          
-          <p class="chart" id="Popular"></p>
-          
-          <p class="chart" id="Energy"></p>
-          
-          <p class="chart" id="Tempo"></p> -->
-          
-          <!-- <li class="chart" id="custom" > -->
-          </li>
-          
-        </ul>
-      </div>
-      <div class='print-options'>
-          <select class="options" id="variables" value=''>
-        
-      </select>
-      <button class='print'>Print Graphs</button>
-      </div>
-
-<!--      
-      <div class="notes"> 
-         <div class='orange'> -->
-        
-      <!-- </div>
-      <div class='notes-functions'>
-        <input type="text" name="" id="note" placeholder="Enter note" style='border:none, '>
-       <button class="note-button">Submit</button>
-      </div>
-      
-      </div> -->
+          <div class="playlist">
+               <section class='albums'></section>
+          <div class='popup hidden'>
+            <h1 id='album-header'>Click on any album to get the full stats</h1>
+          </div>
+          </div>
        
-      
-      
-    
-      
-    </div>
-  
-     
-       <!-- <div>
-        <h1>Seach for an Artist</h1>
-          <input type="text" class="artistName">
-          <button class="submit">Search</button>
-        <section class="searchResult"> </section>
-        <section class="createGraph">
-          <label for="">Create Graph</label>
-          <input type="text" class="addArtist">
-          <input type="button" value="Add Artist" onclick="addElement();">
-        </section>
-
         
-      </div> -->
-      
-    
-      
-  
+        
+         <div class='directions'>
+          <p>  The values from the attributes mentioned above were used to draw comparisons between the 
+            selected tracks, which you can check out in the playlist above. <br> 
+            <br>
+            <br>
+            To view these graphical comparisons:
+            <br>
+            <br>
+            i<span class="dir-text"> Select the attribute from the drop down options </span>  
+            <br>
+           ii<span class="dir-text">   Populate and delete any attribute graph </span>
+            <br>
+            iii <span class="dir-text">Print or dowload a PDF of these graphs! </span> 
+            <br>
+            iv<span class="dir-text"> Enjoy! </span>
+             <!-- simply populate the desired musical attribute that interests you. You can populate as many graphs as you wish and 
+             delete the ones you no longer want to display. If you wish to save or print any of these graphs use the print button.  -->
+          </p>
+          
+          </div>
 
-</body>
-<script src="./dist/main.js"></script>
+      
 
-</html>
+
+       <!-- </div> -->
+
+
+
+
+        <div class='print-options'>
+          <select class="options" id="variables" value=''>
+            
+          </select>
+          <button class='print'>Print Graphs</button>
+
+
+          <div class='graph-section'>
+            <ul class="graphs" id="graph" > 
+                
+            </ul>
+
+          </div>
+          
+          
+        </div>
+
+            
+            
+            
+          </body>
+          <script src="./dist/main.js"></script>
+          
+          </html>

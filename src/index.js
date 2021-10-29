@@ -1,5 +1,4 @@
-// const file = require ("./ArtistSales.json")
-const { select, html } = require("d3");
+
 const songs = require ("./SongData.json");
 let chartVariable;
 let count = 0; 
@@ -7,276 +6,237 @@ let count = 0;
 document.addEventListener("DOMContentLoaded", ()=>{
   options(); 
   printPDF();
-  // hoverOVerText(); 
-  // createAlbumInfo(); 
-  // search(); 
-  // addElement(); 
+  createAlbumInfo(); 
+  hoverAcou(); 
+  dance();
+  energy();
+  instrumentalness();
+  liveness();
+  loudness();
+  speechiness();
+  tempo();
+  valence();
 })
 
-// function createAlbumInfo(){
-//   let parent = document.querySelector(".albums"); 
-//   let unordered = document.createElement("ul"); 
-//   parent.appendChild(unordered); 
 
-//   for(let i = 0; i < songs.length; i++){
+
+
+function createAlbumInfo(){
+  let parent = document.querySelector(".albums"); 
+  let unordered = document.createElement("ul"); 
+  parent.append(unordered); 
+
+  for(let i = 0; i < songs.length; i++){
     
-//     let listElement = document.createElement("li"); 
-//     listElement.dataset.index = i; 
-//     unordered.appendChild(listElement); 
+    let listElement = document.createElement("li"); 
+    listElement.dataset.index = i; 
+    unordered.appendChild(listElement); 
 
-//     let image = document.createElement("img"); 
-//     listElement.appendChild(image); 
+    let image = document.createElement("img"); 
+    listElement.appendChild(image); 
 
-//     let imageSrc = songs[i].src; 
-//     image.setAttribute('class', 'album-art')
-//     image.setAttribute("src", imageSrc); 
+    let imageSrc = songs[i].src; 
+    image.setAttribute('class', 'album-art')
+    image.setAttribute("src", imageSrc); 
 
-//     listElement.addEventListener("click", (e)=> {
-//       e.preventDefault(); 
-//       let ulToDelete = document.querySelector(".infoDelete")
+    listElement.addEventListener("click", (e)=> {
+      let header = document.getElementById('album-header')
+      if(header){
+        header.remove()
+      }
+      e.preventDefault(); 
+      let ulToDelete = document.querySelector(".infoDelete")
+      if(ulToDelete){
+        ulToDelete.remove();
+      } 
+      displayInfo(e); 
+    })
+  }
+    
+}
+
+function displayInfo(e) {
+  displayInfo.called = true; 
+
+  let index = e.currentTarget.dataset.index; 
+  let placeData = document.querySelector(".popup");
+  let newList = document.createElement("ul")
+  newList.setAttribute("class", "infoDelete")
+  placeData.appendChild(newList)
+  let data = songs[index];
+  
+
+  let keys = Object.keys(data)
+
+
+  for(let i = 0; i < keys.length; i++){
+    let temp = keys[i];
+    let newOption = new Option(`${temp}: ${data[temp]}`, data[temp])
+    // placeData.innerHTML = `${temp}: ${data[temp]}`
+    newList.appendChild(newOption);
+  }
+
+  
+  
+}
+
+
+function hoverAcou(){
+    let attr = document.getElementById('acousticness');
+    let overlay = document.createElement('div');
+    overlay.setAttribute('class', 'overlaybox')
+    
+    attr.addEventListener('click', e =>{
+      e.preventDefault(); 
+     
       
-//       if(ulToDelete){
-//         ulToDelete.remove();
-//       } 
-//       displayInfo(e); 
-//     })
-//   }
+      let replace = document.getElementById('info')
+      overlay.innerText = 'Acousticness: \n This value describes how acoustic a song is. A score of 1.0 means the song is most likely to be an acoustic one.'
+
+      replace.append(overlay)
+      deleteAc()
+    })
+}
+
+function deleteAc(){
+
+  let overlayer = document.querySelector('.overlaybox')
+  overlayer.addEventListener('click', e =>{
+    e.preventDefault(); 
+    overlayer.remove()
+  })
+
+}
+function dance(){
+    let attr = document.getElementById('danceability');
+    let overlay = document.createElement('div');
+    overlay.setAttribute('class', 'overlaybox')
     
-// }
+    attr.addEventListener('click', e =>{
+      e.preventDefault(); 
+     
+      
+      let replace = document.getElementById('info')
+      overlay.innerText = 'Danceability: \n Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.'
 
-// function displayInfo(e) {
-//   displayInfo.called = true; 
+      replace.append(overlay)
+      deleteAc()
+    })
+}
+function energy(){
+    let attr = document.getElementById('energy');
+    let overlay = document.createElement('div');
+    overlay.setAttribute('class', 'overlaybox')
+    
+    attr.addEventListener('click', e =>{
+      e.preventDefault(); 
+     
+      
+      let replace = document.getElementById('info')
+      overlay.innerText = 'Energy: \n (energy) represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy.'
 
-//   let index = e.currentTarget.dataset.index; 
-//   let placeData = document.querySelector(".popup");
-//   let newList = document.createElement("ul")
-//   newList.setAttribute("class", "infoDelete")
-//   placeData.appendChild(newList)
-//   let data = songs[index];
-  
+      replace.append(overlay)
+      deleteAc()
+    })
+}
+function instrumentalness(){
+    let attr = document.getElementById('instrumentalness');
+    let overlay = document.createElement('div');
+    overlay.setAttribute('class', 'overlaybox')
+    
+    attr.addEventListener('click', e =>{
+      e.preventDefault(); 
+     
+      
+      let replace = document.getElementById('info')
+      overlay.innerText = 'Instrumentalness: \n This value represents the amount of vocals in the song. The closer it is to 1.0, the more instrumental the song is.'
 
-//   let keys = Object.keys(data)
+      replace.append(overlay)
+      deleteAc()
+    })
+}
+function liveness(){
+    let attr = document.getElementById('liveness');
+    let overlay = document.createElement('div');
+    overlay.setAttribute('class', 'overlaybox')
+    
+    attr.addEventListener('click', e =>{
+      e.preventDefault(); 
+     
+      
+      let replace = document.getElementById('info')
+      overlay.innerText = 'Liveness: \nThis value describes the probability that the song was recorded with a live audience. According to the official documentation \n “a value above 0.8 provides strong likelihood that the track is live”.'
 
+      replace.append(overlay)
+      deleteAc()
+    })
+}
+function loudness(){
+    let attr = document.getElementById('loudness');
+    let overlay = document.createElement('div');
+    overlay.setAttribute('class', 'overlaybox')
+    
+    attr.addEventListener('click', e =>{
+      e.preventDefault(); 
+     
+      
+      let replace = document.getElementById('info')
+      overlay.innerText = 'Loudness: \nThe overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track. Values typical range between -60 and 0 db.'
 
-//   for(let i = 0; i < keys.length; i++){
-//     let temp = keys[i];
-//     let newOption = new Option(`${temp}: ${data[temp]}`, data[temp])
-//     // placeData.innerHTML = `${temp}: ${data[temp]}`
-//     newList.appendChild(newOption);
-//   }
-  
-// }
+      replace.append(overlay)
+      deleteAc()
+    })
+}
+function speechiness(){
+    let attr = document.getElementById('speechiness');
+    let overlay = document.createElement('div');
+    overlay.setAttribute('class', 'overlaybox')
+    
+    attr.addEventListener('click', e =>{
+      e.preventDefault(); 
+     
+      
+      let replace = document.getElementById('info')
+      overlay.innerText = 'Speechiness: \n Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value.'
 
+      replace.append(overlay)
+      deleteAc()
+    })
+}
+function tempo(){
+    let attr = document.getElementById('tempo');
+    let overlay = document.createElement('div');
+    overlay.setAttribute('class', 'overlaybox')
+    
+    attr.addEventListener('click', e =>{
+      e.preventDefault(); 
+     
+      
+      let replace = document.getElementById('info')
+      overlay.innerText = 'Tempo: \n The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.'
 
+      replace.append(overlay)
+      deleteAc()
+    })
+}
+function valence(){
+    let attr = document.getElementById('valence');
+    let overlay = document.createElement('div');
+    overlay.setAttribute('class', 'overlaybox')
+    
+    attr.addEventListener('click', e =>{
+      e.preventDefault(); 
+     
+      
+      let replace = document.getElementById('info')
+      overlay.innerText = 'Valence: \n A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).'
 
-
-  
-// //methods to populate chart data 
-// function createAccRows(arr) {
-//   const accRows = []; 
-//   for(let i = 0; i < arr.length; i++){
-//     accRows.push([arr[i].name + ", "+ arr[i].artists, arr[i].acousticness])
-//   }
-//   return accRows; 
-// };
-
-// //dance-data 
-// function createDanceRows(arr) {
-//   const danceRows = []; 
-//   for(let i = 0; i < arr.length; i++){
-//     danceRows.push([arr[i].name + ", "+ arr[i].artists, arr[i].danceability])
-//   }
-//   return danceRows; 
-// };
-
-// //Popular-data 
-// function createPopularRows(arr) {
-//   const popularityRows = []; 
-//   for(let i = 0; i < arr.length; i++){
-//     popularityRows.push([arr[i].name + ", "+ arr[i].artists, arr[i].popularity])
-//   }
-//   return popularityRows; 
-// };
-
-// //Energy-data 
-// function createEnergyRows(arr) {
-//   const energyRows = []; 
-//   for(let i = 0; i < arr.length; i++){
-//     energyRows.push([arr[i].name + ", "+ arr[i].artists, arr[i].energy])
-//   }
-//   return energyRows; 
-// };
-
-// //Energy-data 
-// function createTempoRows(arr) {
-//   const tempoRows = []; 
-//   for(let i = 0; i < arr.length; i++){
-//     tempoRows.push([arr[i].name + ", "+ arr[i].artists, arr[i].tempo])
-//   }
-//   return tempoRows; 
-// };
-
-
-// //Accoustic Chart
-// anychart.onDocumentReady(function() {
-//   anychart.theme(anychart.themes.darkBlue)
-//   // set the data
-//   var data = {
-//       header: ["Song Title", "Accouticness (dB)"],
-//       rows: 
-//         createAccRows(songs)
-//   };
-
-//   // create the chart
-//   var chart = anychart.column();
-
-//   // add the data
-//   chart.data(data);
-
-//   // set the chart title
-//   chart.title("Accoustic Levels, by Song");
-
-//   // draw
-//   chart.container("Accoustic");
-//   chart.draw();
-// });
-
-// //Danceability chart 
-// anychart.onDocumentReady(function() {
-//   anychart.theme(anychart.themes.darkBlue)
-
-//   var data = {
-//       header: ["Song Title", "Danceability"],
-//       rows: 
-//         createDanceRows(songs)
-//   };
-
-//   var chart = anychart.column();
-
-//   chart.data(data);
-
-//   chart.title("Danceability, by Song");
-
-//   chart.container("Dance");
-//   chart.draw();
-// });
-
-// //Popularity chart 
-// anychart.onDocumentReady(function() {
-//   anychart.theme(anychart.themes.darkBlue)
-
-//   var data = {
-//       header: ["Song Title", "Popularity"],
-//       rows: 
-//         createPopularRows(songs)
-//   };
-
-//   var chart = anychart.column();
-
-//   chart.data(data);
-
-//   chart.title("Popularity, by Song");
-
-//   chart.container("Popular");
-//   chart.draw();
-// });
-
-// //Energy chart 
-// anychart.onDocumentReady(function() {
-
-//   anychart.theme(anychart.themes.darkBlue)
-  
-//   var data = {
-//       header: ["Song Title", "Energy"],
-//       rows: 
-//       createEnergyRows(songs)
-//   };
-
-//   var chart = anychart.column();
-
-//   chart.data(data);
-
-//   chart.title("Energy, by Song");
-
-//   chart.container("Energy");
-//   chart.draw();
-// });
-
-// //Tempo chart 
-// anychart.onDocumentReady(function() {
-
-//   anychart.theme(anychart.themes.darkBlue)
-
-//   var data = {
-//       header: ["Song Title", "Tempo"],
-//       rows: 
-//       createTempoRows(songs)
-//   };
-
-//   var chart = anychart.column();
+      replace.append(overlay)
+      deleteAc()
+    })
+}
 
 
-//   chart.data(data);
-
-//   chart.title("Tempo, by Song");
-
-//   chart.container("Tempo");
-//   chart.draw();
-// });
-
-
-// function getName(){
-
-//   let userInput = document.querySelector(".artistName").value
-//   for(let i = 0; i < songs.length; i++){
-//     if(songs[i].artists === `${userInput}`)
-//     displaySearch(songs[i]);  
-//   }
-//   return "Sorry That Artist Info is not available"; 
-// }; 
-
-
-
-// function search(){
-//   let button = document.querySelector(".submit")
-//   button.addEventListener("click", (e)=>{
-//     e.preventDefault();
-//     getName(); 
-//   })
-// }
-
-
-
-// function displaySearch(e) {
-//  console.log(e);
-//  let keys = Object.keys(e)
-//  console.log(keys);
-
-//   let placeSearch = document.querySelector(".searchResult");
-//   let newList = document.createElement("ul")
-//   newList.setAttribute("class", "infoDelete")
-//   placeSearch.appendChild(newList)
-//   // let data = songs[index];
-//   // console.log(data); 
-  
-
-
-//   for(let i = 0; i < keys.length; i++){
-//     let temp = keys[i];
-//     let newOption = new Option(`${temp}: ${e[temp]}`, e[temp])
-
-//     newList.appendChild(newOption);
-//   }
-  
-// }
-// let artistArray = [];
-// function addElement(){
-//   let name = document.querySelector(".addArtist").value
-//   artistArray.push(name); 
-// }
-
-// let valence; year; acousticness; danceability; energy; explicit; instrumentalness; liveness; loudness; popularity;
-// speechiness; tempo; 
 
 let variables = Object.keys(songs[0])
 const filteredVariables =  variables.filter(key => key !==  'src' && key !== 'release_date' && key !=='duration_ms' && key !=='id' && key !=='mode' && key !=='artists' && key !=='name')
@@ -296,11 +256,10 @@ function options(){
   })
 }
   
-//Energy-data 
 function createCustomRows(arr, variable) {
   const tempRows = []; 
   for(let i = 0; i < arr.length; i++){
-    tempRows.push([arr[i].name + ", "+ arr[i].artists, arr[i][`${variable}`]])
+    tempRows.push([arr[i].name, arr[i][`${variable}`]])
   }
   return tempRows
 };
@@ -348,7 +307,7 @@ const customChart = (variable) => {
   chart.data(data);
 
   // set the chart title
-  chart.title(`${variable} Levels, by Song`);
+  chart.title(`${variable.charAt(0).toUpperCase() + variable.slice(1)} by Song`);
 
   // draw
   // chart.container(`custom`);
@@ -383,27 +342,3 @@ const printPDF = () =>{
   
 }
 
-// let orangeBorder = document.querySelector('.orange'); 
-// let notes = ['hey','my','name','is','oscar'];
-// let container = document.createElement('ul');
-// orangeBorder.append(container); 
-
-// for(let i=0; i < notes.length; i++){
-//   let note = document.createElement('div')
-//   note.innerText = notes[i]
-//   container.append(note)
-// }
-
-const hoverOVerText = () => {
-  let acousticness = document.getElementById('acousticness'); 
-  let modal = document.createElement('div')
-  modal.setAttribute('class', 'modal-background ')
-  let text = document.createElement('p')
-  text.innerHTML = 'lorem ipsum blah lorem ipsum blah lorem ipsum blah lorem ipsum blah '
-  modal.append(text)
-  acousticness.addEventListener('mouseover', e =>{
-    e.preventDefault(); 
-    acousticness.append(modal)
-  })
-  acousticness.removeEventListener()
-}
